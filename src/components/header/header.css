@@ -1,0 +1,23 @@
+.navbar {
+    padding: 0;
+}
+
+.nav-item {
+    padding: 0 20px 0 20px;
+    font-size: 24px;
+    line-height: 60px;
+    color: #4b4b4b;
+    text-decoration: none;
+}
+
+.nav-item:hover {
+    color: #4b4b4b;
+}
+
+.nav-item.active{
+    background-color: #cecece;
+}
+
+.navbar-nav {
+    width: 100%;
+}
