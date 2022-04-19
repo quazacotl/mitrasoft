@@ -26,13 +26,16 @@ const Gallery = () => {
         return (
             <>
                 <h2 className={'mt-5 text-center'}>{categoryName}</h2>
-                <div className={'row g-5'}>
+                <div className={'d-flex gap-4 mt-4 flex-wrap'}>
                     {imgArray.slice(offset, offset + 6).map(item => {
                         return (
-                            <div className="col-sm-6 col-md-3 col-lg-2">
-                                <NavLink to={`/${item.id}`}>
-                                    <Image key={item.id} fluid className={'gallery-image'} src={item.download_url}/>
-                                </NavLink>
+                            <div className="position-relative overflow-hidden gallery-image-wrapper">
+                                <Image key={item.id} fluid className={'gallery-image'} src={item.download_url}/>
+                                <div className={'position-absolute d-flex justify-content-center align-items-center button-wrapper'}>
+                                    <NavLink to={`/${item.id}`}>
+                                        <button className={'btn btn-light'}>Подробнее</button>
+                                    </NavLink>
+                                </div>
                             </div>
 
                         )
