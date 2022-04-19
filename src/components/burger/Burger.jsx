@@ -1,12 +1,13 @@
 import './burger.css'
 import {useDispatch, useSelector} from "react-redux";
+import {toggleBurgerAction} from "../../redux/redux";
 
 const Burger = () => {
     const dispatch = useDispatch()
     const isBurgerActive = useSelector(state => state.isBurgerActive)
 
     const toggleBurger = () => {
-        dispatch({type: 'SWITCH_BURGER'})
+        dispatch(toggleBurgerAction())
     }
 
     return (

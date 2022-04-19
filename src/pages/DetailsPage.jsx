@@ -6,6 +6,7 @@ const DetailsPage = () => {
         <>
             <Header/>
             <Aside/>
+            <h2>Details page</h2>
         </>
     );
 };

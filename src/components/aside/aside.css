@@ -8,8 +8,8 @@
     width: 30vw;
     top: 0;
     left: -50%;
-    background-color: rgba(120, 120, 120,.8);
-    transition: .3s all ease-in;
+    background-color: rgba(87, 87, 87, 0.75);
+    transition: .3s left ease-in;
     z-index: 2;
 }
 
@@ -52,16 +52,10 @@
     cursor: pointer;
 }
 
-.avatar-wrapper {
-    width: 60px;
-    height: 60px;
-    border-radius: 100%;
-    overflow: hidden;
-}
 
 .avatar-img {
-    width: 100%;
-    height: 100%;
+    width: 60px;
+    height: 60px;
     object-fit: cover;
 }
 
