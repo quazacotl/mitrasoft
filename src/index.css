@@ -17,3 +17,7 @@ code {
   position: relative;
   min-height: 100vh;
 }
+
+.bg {
+  background-color: #f0f3ff;
+}

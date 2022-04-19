@@ -10,7 +10,7 @@ import DetailsPage from "./pages/DetailsPage";
 
 function App() {
   return (
-    <div className="App d-flex flex-column ">
+    <div className="App d-flex flex-column bg">
       <Router>
         <Routes>
           <Route path="/" element={<GalleryPage/>}/>

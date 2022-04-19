@@ -1,4 +1,4 @@
-import {Container, Spinner} from "react-bootstrap";
+import {Container} from "react-bootstrap";
 import Image from "react-bootstrap/Image";
 import './gallery.css'
 import {asyncSetPhotos, setPhotos, toggleLoaderAction} from "../../redux/redux";
@@ -27,9 +27,9 @@ const Gallery = () => {
             <>
                 <h2 className={'mt-5 text-center'}>{categoryName}</h2>
                 <div className={'d-flex gap-4 mt-4 flex-wrap'}>
-                    {imgArray.slice(offset, offset + 6).map(item => {
+                    {imgArray.slice(offset, offset + 6).map((item, i) => {
                         return (
-                            <div className="position-relative overflow-hidden gallery-image-wrapper">
+                            <div key={i} className="position-relative overflow-hidden gallery-image-wrapper">
                                 <Image key={item.id} fluid className={'gallery-image'} src={item.download_url}/>
                                 <div className={'position-absolute d-flex justify-content-center align-items-center button-wrapper'}>
                                     <NavLink to={`/${item.id}`}>
