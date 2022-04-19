@@ -37,7 +37,6 @@ const Gallery = () => {
                                     </NavLink>
                                 </div>
                             </div>
-
                         )
                     })}
                 </div>
@@ -50,9 +49,9 @@ const Gallery = () => {
         return (
             <>
                 <CategoryPhotosView offset={0} imgArray={photos} categoryName={'Категория 1'}/>
-                <CategoryPhotosView offset={5} imgArray={photos} categoryName={'Категория 2'}/>
-                <CategoryPhotosView offset={11} imgArray={photos} categoryName={'Категория 3'}/>
-                <CategoryPhotosView offset={17} imgArray={photos} categoryName={'Категория 4'}/>
+                <CategoryPhotosView offset={6} imgArray={photos} categoryName={'Категория 2'}/>
+                <CategoryPhotosView offset={12} imgArray={photos} categoryName={'Категория 3'}/>
+                <CategoryPhotosView offset={18} imgArray={photos} categoryName={'Категория 4'}/>
             </>
         )
     }
