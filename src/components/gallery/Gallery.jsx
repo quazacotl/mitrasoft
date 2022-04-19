@@ -1,30 +1,32 @@
 import {Container, Spinner} from "react-bootstrap";
 import Image from "react-bootstrap/Image";
 import './gallery.css'
-import {asyncSetPhotos, setPhotos} from "../../redux/redux";
+import {asyncSetPhotos, setPhotos, toggleLoaderAction} from "../../redux/redux";
 import {useDispatch, useSelector} from "react-redux";
 import {useEffect} from "react";
-import {logDOM} from "@testing-library/react";
 import {NavLink} from "react-router-dom";
+import Loader from "../loader/Loader";
 
 const Gallery = () => {
     const dispatch = useDispatch()
 
     useEffect(() => {
+        dispatch(toggleLoaderAction(true))
         dispatch(asyncSetPhotos())
+        setTimeout(() => {dispatch(toggleLoaderAction(false))}, 500)
         return () => dispatch(setPhotos(null))
     }, [])
 
     const photos = useSelector(state => state.photos)
-    // setPhotos(photos)
-    // console.log(photos)
+    const isLoader = useSelector(state => state.isLoaderVisible)
+
 
     const CategoryPhotosView = props => {
         const {offset, categoryName, imgArray} = props
         return (
             <>
                 <h2 className={'mt-5 text-center'}>{categoryName}</h2>
-                <div className={'row g-5 mt-2'}>
+                <div className={'row g-5'}>
                     {imgArray.slice(offset, offset + 6).map(item => {
                         return (
                             <div className="col-sm-6 col-md-3 col-lg-2">
@@ -53,8 +55,9 @@ const Gallery = () => {
     }
 
     return (
-        <Container className={''}>
-            {photos ? <PhotosView/> : <Spinner style={{width: '50px', height: '50px'}} animation="border" variant="success" />}
+        <Container className={'flex-grow-1 position-relative'}>
+            {isLoader ? <Loader side={'200px'}/> : null}
+            {photos ? <PhotosView/> : null}
         </Container>
     );
 };

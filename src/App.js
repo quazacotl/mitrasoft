@@ -1,3 +1,4 @@
+import './index.css'
 import {
   BrowserRouter as Router,
   Routes,
@@ -9,7 +10,7 @@ import DetailsPage from "./pages/DetailsPage";
 
 function App() {
   return (
-    <div className="App">
+    <div className="App d-flex flex-column ">
       <Router>
         <Routes>
           <Route path="/" element={<GalleryPage/>}/>
